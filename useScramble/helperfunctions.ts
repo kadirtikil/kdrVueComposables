@@ -22,7 +22,7 @@ export function findScramble(key?: string): Scramble {
 }
 
 /**
- * Generates a string of given Size.
+ * Generates a string of given size.
  */
 export function generateRandomString(size: number, option?: string) {
     const validOptions: string[] = ["useOnlyLarge", "useOnlySmall", "useOnlyNumbers", "useOnlySpecialChars"];
