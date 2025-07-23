@@ -12,6 +12,8 @@ A composable that watches scroll behaviour. Currently only covers a couple of ba
 A composable that can be called with a string, containing a todo, that will then place that string into a TODO.md in the root dir. Removes the todo if the call is removed in the code.
 Currently in development.
 
+## useMarquee
+Reads in a directory containing svg's, set their sizes and add animations all in a render function in vue for ease of use and consistent reproducability.
 
 ## Planned 
 ###  useScramble
