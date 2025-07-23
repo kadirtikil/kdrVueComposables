@@ -5,14 +5,13 @@ import { sleep, findScramble, generateRandomString } from "./helperfunctions";
 
 
 
-export function useScramble(text: Ref<string>, scrambleType?: string, options?: scrambleOptions) {
+export async function useScramble(text: Ref<string>, scrambleType?: string, options?: scrambleOptions): Promise<void> {
 
     const ms: number = options?.duration ? options.duration : 500;
-
     
     const func: ((text: Ref<string, string>, ms: number) => Promise<void>) | undefined = (findScramble(scrambleType).func);
 
-    async function run() {
+    async function run(): Promise<void> {
         if (func != undefined){
             await func(text, ms);       
         } else {
@@ -20,7 +19,7 @@ export function useScramble(text: Ref<string>, scrambleType?: string, options?: 
         }
     }
 
-    run();
+    await run();
     // TODO: should rather just return the run and let the user of the composable decide when to run it
 }
 
